@@ -2,6 +2,7 @@ package com.promeet.calendar.controller;
 
 import com.promeet.calendar.application.command.CreateCalendarEventCommand;
 import com.promeet.calendar.application.handlers.CreateCalendarEventHandler;
+import com.promeet.calendar.domain.event.CalendarEventCreated;
 import com.promeet.calendar.domain.model.*;
 import com.promeet.calendar.dto.CreateCalendarEventDto;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,11 @@ public class CalendarResource {
                 .status(CalendarEventStatus.SCHEDULED)
                 .build();
         createCalendarEventHandler.handle(command);
+
+
         return ResponseEntity.ok("Hello world");
     }
+
+
 
 }

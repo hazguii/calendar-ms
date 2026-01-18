@@ -16,7 +16,6 @@ public class CreateCalendarEventDto {
 
     public CreateCalendarEventCommand toCommand(UUID ownerId, CalendarEventStatus status) {
         return CreateCalendarEventCommand.builder()
-
                 .build();
     }
 }
