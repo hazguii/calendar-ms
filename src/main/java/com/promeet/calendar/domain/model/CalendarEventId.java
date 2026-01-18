@@ -1,11 +1,17 @@
 package com.promeet.calendar.domain.model;
 
-import com.promeet.calendar.domain.ddd.ValueObject;
+import com.promeet.calendar.domain.ddd.AggregateId;
+import jakarta.persistence.Embeddable;
 
 import java.util.UUID;
 
-public class CalendarEventId extends ValueObject<UUID> {
+@Embeddable
+public class CalendarEventId extends AggregateId<CalendarEvent> {
+    public CalendarEventId() {
+        super();
+    }
 
-    CalendarEventId(UUID id){super(id);}
-
+    public CalendarEventId(UUID value) {
+        super(value);
+    }
 }

@@ -1,8 +1,13 @@
 package com.promeet.calendar.domain.ddd;
 
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass // Même si tes objets sont des @Embeddable, Hibernate a besoin de savoir que la classe parente ValueObject contient des informations de mapping (le champ value).
 public abstract class ValueObject<T> {
 
-    protected final T value;
+    protected T value;
+
+    protected ValueObject(){}
 
     protected ValueObject(T value) {
         if (value == null) {

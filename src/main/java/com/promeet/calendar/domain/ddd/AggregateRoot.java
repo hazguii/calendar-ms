@@ -12,6 +12,7 @@ public abstract class AggregateRoot {
         this.id = id;
     }
 
+
     public UUID id(){ return id;}
 
     @Override

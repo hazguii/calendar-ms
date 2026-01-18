@@ -5,6 +5,7 @@ import java.util.UUID;
 public abstract class Entity {
     protected UUID id;
 
+    protected Entity(){}
     protected Entity(UUID id) {
         if (id == null) {
             throw new IllegalArgumentException("Id cannot be null");
