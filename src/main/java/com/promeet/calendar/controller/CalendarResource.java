@@ -21,7 +21,7 @@ public class CalendarResource {
     }
 
     @PostMapping("/v1/calendar")
-    public ResponseEntity<String> getCalendarEvent(@RequestBody CreateCalendarEventDto request){
+    public ResponseEntity<Void> getCalendarEvent(@RequestBody CreateCalendarEventDto request){
         // Creating the command
         CreateCalendarEventCommand command = CreateCalendarEventCommand.builder()
                 .owner(new CalendarEventOwner(UUID.randomUUID()))
@@ -34,7 +34,7 @@ public class CalendarResource {
         createCalendarEventHandler.handle(command);
 
 
-        return ResponseEntity.ok("Hello world");
+        return ResponseEntity.ok().build();
     }
 
 

@@ -8,7 +8,7 @@ import java.util.Date;
 @Embeddable
 public class Timestamp extends ValueObject<Date> implements Comparable<Timestamp>{
 
-    public Timestamp(){}
+    public Timestamp(){super(new Date());}
     public Timestamp(Date value) {
         super(value);
     }
